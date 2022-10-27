@@ -6,6 +6,10 @@ pipeline {
   }
   agent any
   stages {
+     stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
     stage('Cloning Git') {
       steps {
         git([url: 'https://github.com/GustavoGodoy/BasicDotNetApi.git', branch: 'main', credentialsId: 'git_ssh_gustavo'])
