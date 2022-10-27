@@ -5,7 +5,7 @@ pipeline {
     dockerImage = ''
   }
   agent any
-  tools {mydocker  "docker" } 
+  tools {dockerTool  "myDocker" } 
   stages {
     stage('Initialize'){
         steps{
