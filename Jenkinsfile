@@ -14,7 +14,6 @@ pipeline {
                 bat "dotnet build --configuration Release"
             }
         }
-        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
