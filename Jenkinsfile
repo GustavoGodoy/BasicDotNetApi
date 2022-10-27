@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/GustavoGodoy/BasicDotNetApi.git', branch: 'main', credentialsId: 'git_ssh_gustavo'])
+        git([url: '', branch: 'main', credentialsId: 'git_ssh_gustavo'])
       }
     }
     stage('Building image') {
