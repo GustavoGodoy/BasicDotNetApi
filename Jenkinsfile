@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Cloning Git') {
       steps {
-        git([url: '', branch: 'main', credentialsId: 'git_ssh_gustavo'])
+        git([url: 'https://github.com/GustavoGodoy/BasicDotNetApi.git', branch: 'main', credentialsId: 'git_ssh_gustavo'])
       }
     }
     stage('Building image') {
@@ -30,7 +30,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( 'https://hub.docker.com/godoyq', registryCredential ) {
+          docker.withRegistry( '', registryCredential ) {
             dockerImage.push("$BUILD_NUMBER")
              dockerImage.push('latest')
 
