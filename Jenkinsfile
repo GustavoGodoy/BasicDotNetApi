@@ -12,6 +12,7 @@ pipeline {
             def dockerHome = tool 'myDocker'
             env.PATH = "${dockerHome}/bin:${env.PATH}"
             }
+          sh "docker run -v /var/run/docker.sock:/var/run/docker.sock"
         }
     }
     stage('Cloning Git') {
